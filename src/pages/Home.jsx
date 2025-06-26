@@ -5,6 +5,7 @@ const TopDestinations = lazy(() => import('../components/TopDestinations'));
 const BentoCard = lazy(() => import('../components/BentoCard'));
 const Footer = lazy(() => import('../components/Footer'));
 const MapSection = lazy(() => import('../components/MapSection'));
+const Testimonial = lazy(() => import('../components/Testimonial'));
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
         <TopDestinations />
         <AboutSection />
         <BentoCard />
+        <Testimonial />
         <MapSection />
         <Footer />
       </Suspense>
