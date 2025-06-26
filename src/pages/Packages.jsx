@@ -269,8 +269,11 @@ const Packages = () => {
           </motion.div>
         </AnimatePresence>
       </div>
+      
     </section>
+   
   );
+  
 };
 
 export default Packages;
