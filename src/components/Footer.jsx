@@ -1,12 +1,14 @@
 import React from 'react';
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const navLinks = [
-    { name: 'Home', path: '#' },
-    { name: 'Packages', path: '#packages' },
-    { name: 'About', path: '#about' },
-    { name: 'Contact', path: '#contact' },
+    { name: 'Home', to: '/' },
+    { name: 'Packages', to: '/Packages' },
+    { name: 'Resorts', to: '/Resorts' },
+    { name: 'About', to: '/About' },
+    { name: 'Contact', to: '/Contact' },
   ];
 
   const socialLinks = [
@@ -16,9 +18,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-black text-white pt-20 pb-10 overflow-hidden">
+    <footer className="relative bg-transparent text-white pt-20 pb-10 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-red-900/50 via-black to-black"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-red-900/30 via-transparent to-transparent"></div>
         <div className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-r from-red-600/10 via-red-500/5 to-transparent rounded-full filter blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-l from-red-600/10 via-red-500/10 to-transparent rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
@@ -45,10 +47,10 @@ const Footer = () => {
             <ul className="space-y-4">
               {navLinks.map(link => (
                 <li key={link.name}>
-                  <a href={link.path} className="text-gray-300 hover:text-red-400 transition-colors duration-300 flex items-center">
+                  <Link to={link.to} className="text-gray-300 hover:text-red-400 transition-colors duration-300 flex items-center">
                     <Send className="w-4 h-4 mr-3" />
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -26,7 +26,7 @@ const MapSection = () => {
             Visit Us
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-            Find your next adventure on the map. We have curated destinations all over the world.
+            Find your next adventure with us. Our office location on google maps.
           </p>
         </div>
         <div className="h-[500px] w-full max-w-5xl mx-auto rounded-2xl overflow-hidden border-4 border-gray-800 shadow-2xl">

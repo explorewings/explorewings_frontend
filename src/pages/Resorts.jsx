@@ -3,6 +3,7 @@ import { FiSearch } from 'react-icons/fi';
 import { MapPin, Star, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../lib/supabaseClient';
+import Footer from '../components/Footer';
 
 const Resorts = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -204,6 +205,8 @@ const Resorts = () => {
           </motion.div>
         </AnimatePresence>
       </div>
+
+      <Footer />
     </section>
   );
 };

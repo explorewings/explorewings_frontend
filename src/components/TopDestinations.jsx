@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Star, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const destinations = [
   {
@@ -108,12 +109,12 @@ const TopDestinations = () => {
 
         {/* View All Button */}
         <div className="text-center mt-16 md:mt-20">
-          <button className="group relative overflow-hidden bg-gradient-to-r from-black text-white font-bold py-4 px-8 sm:py-5 sm:px-10 rounded-full transition-transform duration-300 hover:scale-105 border border-gray-600">
+          <Link to="/Packages" className="group relative overflow-hidden bg-gradient-to-r from-black text-white font-bold py-4 px-8 sm:py-5 sm:px-10 rounded-full transition-transform duration-300 hover:scale-105 border border-gray-600 inline-block">
             <span className="relative z-10 flex items-center text-lg md:text-xl">
               View All Packages
               <ArrowRight className="ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

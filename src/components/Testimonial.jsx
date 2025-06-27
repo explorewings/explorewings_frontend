@@ -103,7 +103,7 @@ const Testimonials = () => {
                   ))}
                 </div>
                 <p className="text-gray-300 mb-6 italic text-lg md:text-xl overflow-hidden text-ellipsis line-clamp-5">"{testimonial.review}"</p>
-                <p className="text-yellow-400 font-medium text-base md:text-lg">- {testimonial.name}</p>
+                <p className="text-white font-medium text-base md:text-lg">- {testimonial.name}</p>
               </div>
             </SwiperSlide>
           ))}

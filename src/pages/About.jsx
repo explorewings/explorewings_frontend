@@ -1,9 +1,16 @@
 import React from 'react';
 import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <div className="bg-black text-gray-100 min-h-screen">
+    <motion.div
+      className="bg-black text-gray-100 min-h-screen"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -40 }}
+      transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+    >
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden bg-black">
         <div className="absolute inset-0 bg-gradient-to-t from-black via-red-900/50 to-transparent"></div>
@@ -191,7 +198,7 @@ const About = () => {
 
       {/* CTA Section */}
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

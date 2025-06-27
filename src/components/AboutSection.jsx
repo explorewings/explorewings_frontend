@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mountain, Map, Globe, Compass, ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
   return (
@@ -85,10 +86,12 @@ const AboutSection = () => {
               
               <div className="flex flex-col sm:flex-row gap-6">
                 <button className="group relative overflow-hidden bg-gradient-to-r from-black text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-black/30 border border-gray-600">
+                  <Link to="/About">
                   <span className="relative z-10 flex items-center text-lg">
                     About Us
                     <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
                   </span>
+                  </Link>
                 </button>
                 
                 <button className="group relative bg-black/50 hover:bg-black/70 text-white font-bold py-4 px-8 rounded-full transition-all duration-500 transform hover:scale-105 border-2 border-white/20 hover:border-white/40 backdrop-blur-sm">

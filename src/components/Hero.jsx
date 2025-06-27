@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Plane, MapPin, Star, ArrowRight, Globe, Compass } from 'lucide-react'
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -96,16 +97,22 @@ const Hero = () => {
         <div className={`flex flex-col sm:flex-row gap-4 transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           
           <button className="group bg-black/20 backdrop-blur-md border border-gray-700/50 hover:bg-black/30 text-gray-300 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-transform duration-300 hover:scale-105">
+          <Link to="/Packages">
             <span className="flex items-center">
               Start Your Journey
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </span>
+            </Link>
           </button>
           
           <button className="group bg-black/20 backdrop-blur-md border border-gray-700/50 hover:bg-black/30 text-gray-300 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-transform duration-300 hover:scale-105">
+          <Link to="/Resorts">
             <span className="flex items-center">
               View Resorts
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+
             </span>
+            </Link>
           </button>
         </div>
 

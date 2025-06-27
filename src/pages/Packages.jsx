@@ -3,6 +3,7 @@ import { FiSearch } from 'react-icons/fi';
 import { MapPin, Star, ArrowRight, Globe, Mountain, Compass } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../lib/supabaseClient';
+import Footer from '../components/Footer';
 
 const Packages = () => {
   const [activeTab, setActiveTab] = useState('Kerala');
@@ -260,6 +261,8 @@ const Packages = () => {
           </motion.div>
         </AnimatePresence>
       </div>
+
+      <Footer />
     </section>
   );
 };
