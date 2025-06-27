@@ -110,7 +110,7 @@ const Hero = () => {
         </div>
 
         {/* Stats Section - Simplified animations */}
-        <div className={`grid grid-cols-3 gap-4 md:gap-8 mt-8 sm:mt-12 w-full max-w-6xl px-4 transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-80' : 'translate-y-10 opacity-0'}`}>
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mt-8 sm:mt-12 w-full max-w-6xl px-4 transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-80' : 'translate-y-10 opacity-0'}`}>
           {[
             { number: '150+', label: 'Destinations', icon: Globe },
             { number: '50K+', label: 'Travelers', icon: Plane },

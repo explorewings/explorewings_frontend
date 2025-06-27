@@ -17,7 +17,7 @@ const destinations = [
     image: "https://i.pinimg.com/736x/d1/5f/32/d15f32dfc06eb9be94bc51d64d4acb2a.jpg",
     rating: 4.8,
     reviews: 1892,
-    description: "Iconic white-washed buildings and breathtaking sunsets",
+    description: "Iconic buildings and breathtaking sunsets",
     span: "col-span-full md:col-span-1 row-span-1"
   },
   {
@@ -26,7 +26,7 @@ const destinations = [
     image: "https://i.pinimg.com/736x/41/88/46/41884604312499b0fc1c3314ad49858a.jpg",
     rating: 4.9,
     reviews: 2156,
-    description: "Ancient temples and traditional Japanese culture",
+    description: "Best party point in india",
     span: "col-span-full md:col-span-1 row-span-1"
   },
   {
@@ -35,7 +35,7 @@ const destinations = [
     image: "https://i.pinimg.com/736x/ac/0c/ae/ac0cae60259bd03bfe3782636099d281.jpg",
     rating: 4.9,
     reviews: 1987,
-    description: "Majestic mountains and world-class skiing destinations",
+    description: "Majestic temples and world-class skiing destinations",
     span: "col-span-full md:col-span-2 row-span-1"
   }
 ];

@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import { Menu, X, Instagram, Facebook } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navItems = [
-    { name: 'Home', href: '#' },
-    { name: 'Packages', href: '#packages' },
-    { name: 'Resorts', href: '#Resorts' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', to: '/' },
+    { name: 'Packages', to: '/Packages' },
+    { name: 'Resorts', to: '/Resorts' },
+    { name: 'About', to: '/About' },
+    { name: 'Contact', to: '/Contact' }
   ]
 
   return (
@@ -55,14 +56,14 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.to}
                   className="relative px-3 py-2 text-sm font-medium text-white hover:text-red-300 transition-all duration-300 hover:scale-105 group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-300 transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -120,9 +121,9 @@ const Navbar = () => {
         }`}>
           <div className="p-6 space-y-4">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.to}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-4 py-3 text-white font-medium rounded-xl transition-all duration-200 hover:bg-red-500/20 hover:text-red-300 hover:scale-105 ${
                   'animate-fade-in-up'
@@ -130,7 +131,7 @@ const Navbar = () => {
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             
             <div className="pt-4 border-t border-gray-700 flex justify-center space-x-4">
