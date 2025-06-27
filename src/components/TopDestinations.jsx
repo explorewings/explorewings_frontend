@@ -4,8 +4,8 @@ import { MapPin, Star, ArrowRight } from 'lucide-react';
 const destinations = [
   {
     id: 1,
-    name: "Bali, Indonesia",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80",
+    name: "Kochi,Kerala",
+    image: "https://i.pinimg.com/736x/9b/a8/3c/9ba83c79ce33fc173557135e968dfaae.jpg",
     rating: 4.9,
     reviews: 2341,
     description: "Tropical paradise with stunning beaches and rich culture",
@@ -13,8 +13,8 @@ const destinations = [
   },
   {
     id: 2,
-    name: "Santorini, Greece",
-    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80",
+    name: "Kovalam, Kerala",
+    image: "https://i.pinimg.com/736x/d1/5f/32/d15f32dfc06eb9be94bc51d64d4acb2a.jpg",
     rating: 4.8,
     reviews: 1892,
     description: "Iconic white-washed buildings and breathtaking sunsets",
@@ -22,8 +22,8 @@ const destinations = [
   },
   {
     id: 3,
-    name: "Kyoto, Japan",
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
+    name: "Anjuna, Goa",
+    image: "https://i.pinimg.com/736x/41/88/46/41884604312499b0fc1c3314ad49858a.jpg",
     rating: 4.9,
     reviews: 2156,
     description: "Ancient temples and traditional Japanese culture",
@@ -31,8 +31,8 @@ const destinations = [
   },
   {
     id: 4,
-    name: "Swiss Alps, Switzerland",
-    image: "https://images.unsplash.com/photo-1729607195105-ec4734b694c2?auto=format&fit=crop&w=800&q=80",
+    name: "Shimla, Himachal Pradesh",
+    image: "https://i.pinimg.com/736x/ac/0c/ae/ac0cae60259bd03bfe3782636099d281.jpg",
     rating: 4.9,
     reviews: 1987,
     description: "Majestic mountains and world-class skiing destinations",
