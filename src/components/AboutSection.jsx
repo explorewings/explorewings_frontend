@@ -95,11 +95,13 @@ const AboutSection = () => {
                 </button>
                 
                 <button className="group relative bg-black/50 hover:bg-black/70 text-white font-bold py-4 px-8 rounded-full transition-all duration-500 transform hover:scale-105 border-2 border-white/20 hover:border-white/40 backdrop-blur-sm">
+                <Link to="/Resorts">
                   <span className="flex items-center text-lg relative z-10">
                     View Resorts
                     <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
 
                   </span>
+                  </Link>
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </button>
               </div>
