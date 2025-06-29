@@ -251,7 +251,7 @@ const Resorts = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.8, opacity: 0, y: 50 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-4xl max-h-[95vh] overflow-y-auto bg-gradient-to-br from-gray-900/95 via-gray-900/90 to-black/95 rounded-3xl border border-white/20 backdrop-blur-xl shadow-2xl"
+              className="relative w-full max-w-[90vw] sm:max-w-4xl max-h-[90vh] sm:max-h-[95vh] overflow-y-auto bg-gradient-to-br from-gray-900/95 via-gray-900/90 to-black/95 rounded-3xl border border-white/20 backdrop-blur-xl shadow-2xl"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -269,7 +269,7 @@ const Resorts = () => {
               </button>
 
               {/* Image Swiper */}
-              <div className="relative h-72 md:h-96 lg:h-[500px] rounded-t-3xl overflow-hidden">
+              <div className="relative h-48 sm:h-72 md:h-96 lg:h-[500px] rounded-t-3xl overflow-hidden">
                 <Swiper
                   modules={[Pagination, Navigation, Autoplay]}
                   spaceBetween={0}
@@ -333,11 +333,11 @@ const Resorts = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 md:p-8 lg:p-10">
+              <div className="p-4 md:p-8 lg:p-10">
                 
                 {/* Price Section */}
                 <div className="bg-gradient-to-r from-red-500/20 via-red-600/10 to-red-900/20 p-6 rounded-3xl border border-white/10 backdrop-blur-sm mb-8">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div className="flex flex-row items-center justify-between gap-4">
                     <div>
                       <h3 className="text-white font-semibold text-lg mb-1">Resort Price</h3>
                       <p className="text-gray-400 text-sm">All inclusive stay</p>
