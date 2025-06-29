@@ -178,19 +178,21 @@ const Resorts = () => {
                   </div>
 
                   <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <MapPin className="w-5 h-5 text-red-400" />
-                      <h3 className="text-xl font-bold text-white group-hover:text-white/90 transition-colors duration-300">
+                    <div className="flex items-start gap-3 mb-3 min-h-[3rem]">
+                      <MapPin className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
+                      <h3 className="text-xl font-bold text-white group-hover:text-white/90 transition-colors duration-300 leading-tight">
                         {resort.title}
                       </h3>
                     </div>
-                    <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
+                    
+                    <p className="text-gray-400 mb-3 group-hover:text-gray-300 transition-colors duration-300 line-clamp-1">
                       {resort.description}
                     </p>
-                    <div className="flex items-center gap-3 mb-6">
-                      <Star className="w-5 h-5 text-yellow-400" />
+                    
+                    <div className="flex items-center gap-3 mb-2">
+                      <Star className="w-5 h-5 text-yellow-400 flex-shrink-0" />
                       <span className="text-white font-semibold">{resort.rating}</span>
-                      <span className="text-gray-400 text-sm">({resort.reviews} reviews)</span>
+                      
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-2xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
