@@ -132,7 +132,7 @@ const Packages = () => {
           className="text-center mb-12 md:mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 mt-20">
-            <span className="bg-gradient-to-r from-red-200 via-red-400 to-red-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-200 via-red-300 to-red-400 bg-clip-text text-transparent">
               Travel Packages
             </span>
           </h2>
@@ -242,7 +242,7 @@ const Packages = () => {
                         {pkg.title}
                       </h3>
                     </div>
-                    <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
+                    <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300 line-clamp-1">
                       {pkg.description}
                     </p>
                     <div className="flex items-center gap-3 mb-6">

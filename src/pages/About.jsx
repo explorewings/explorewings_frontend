@@ -19,8 +19,8 @@ const About = () => {
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10 max-w-6xl">
           <div className="text-center mb-[-60px] mt-[100px]">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8">
-              <span className="bg-gradient-to-r from-red-200 via-red-400 to-red-600 bg-clip-text text-transparent">
-                About <span className="text-white">Explore</span> Wings
+              <span className="bg-gradient-to-r from-red-200 via-red-300 to-red-400 bg-clip-text text-transparent">
+                About Explore Wings
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">

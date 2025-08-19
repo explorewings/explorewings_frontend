@@ -52,7 +52,7 @@ const TopDestinations = () => {
         {/* Section Header */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8">
-            <span className="bg-gradient-to-r from-red-200 via-red-400 to-red-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-200 via-red-300 to-red-400 bg-clip-text text-transparent">
               Top Destinations
             </span>
           </h2>

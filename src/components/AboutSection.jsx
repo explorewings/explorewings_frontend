@@ -35,7 +35,7 @@ const AboutSection = () => {
                 <img 
                   src="/images/ew12.png" 
                   alt="Travel adventure" 
-                  className="w-full h-auto object-cover aspect-[4/3] lg:aspect-[4/3] rounded-3xl relative z-10"
+                  className="w-full h-full object-cover aspect-[4/3] lg:aspect-[4/3] rounded-3xl relative z-10"
                 />
                 
                 {/* Floating decorative elements */}
@@ -61,7 +61,7 @@ const AboutSection = () => {
               <h2 className="text-4xl md:text-5xl lg:text-4xl font-black text-white mb-8 leading-tight">
                 We Craft{' '}
                 <span className="relative inline-block">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-200 via-red-500 to-red-800">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-200 via-red-300 to-red-400">
                     Unforgettable
                   </span>
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import { MapPin, Star, ArrowRight, X } from 'lucide-react';
+import { MapPin, Star, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
@@ -16,6 +16,8 @@ const Resorts = () => {
   const [loading, setLoading] = useState(true);
   const [selectedResort, setSelectedResort] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const cardsPerPage = 12;
 
   // Fetch resorts from Supabase
   useEffect(() => {
@@ -59,6 +61,25 @@ const Resorts = () => {
     setIsModalOpen(true);
   };
 
+  // Reset to first page when search query changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery]);
+
+  // Scroll to top when resorts data loads or page changes
+  useEffect(() => {
+    // Wait for content to be rendered
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+      // Fallback for smooth scrolling
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 10);
+    }, 200);
+    
+    return () => clearTimeout(timer);
+  }, [resorts, currentPage]);
+
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedResort(null);
@@ -68,6 +89,21 @@ const Resorts = () => {
     resort.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     resort.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Pagination logic
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentResorts = filteredResorts.slice(indexOfFirstCard, indexOfLastCard);
+  const totalPages = Math.ceil(filteredResorts.length / cardsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    // Force scroll to top immediately and then smooth
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -112,7 +148,7 @@ const Resorts = () => {
           className="text-center mb-12 md:mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 mt-20">
-            <span className="bg-gradient-to-r from-red-200 via-red-400 to-red-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-200 via-red-300 to-red-400 bg-clip-text text-transparent">
               Our Resorts
             </span>
           </h2>
@@ -159,8 +195,8 @@ const Resorts = () => {
                   <div className="h-4 w-1/4 bg-gray-800/50 rounded"></div>
                 </motion.div>
               ))
-            ) : filteredResorts.length > 0 ? (
-              filteredResorts.map((resort) => (
+            ) : currentResorts.length > 0 ? (
+              currentResorts.map((resort) => (
                 <motion.div
                   key={resort.id}
                   variants={itemVariants}
@@ -229,6 +265,81 @@ const Resorts = () => {
             )}
           </motion.div>
         </AnimatePresence>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex justify-center items-center gap-2 mt-[90px]"
+          >
+            {/* Previous Button */}
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`p-3 rounded-lg font-medium transition-all duration-300 ${
+                currentPage === 1
+                  ? 'bg-gray-800/50 text-gray-500 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:scale-105 hover:shadow-lg'
+              }`}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            {/* Page Numbers */}
+            <div className="flex items-center gap-2">
+              {Array.from({ length: totalPages }, (_, index) => {
+                const pageNumber = index + 1;
+                const isActive = pageNumber === currentPage;
+                
+                // Show first page, last page, current page, and pages around current
+                const shouldShow = 
+                  pageNumber === 1 || 
+                  pageNumber === totalPages || 
+                  Math.abs(pageNumber - currentPage) <= 1;
+
+                if (!shouldShow) {
+                  // Show ellipsis
+                  if (pageNumber === 2 && currentPage > 3) {
+                    return <span key={`ellipsis-start`} className="px-2 text-gray-400">...</span>;
+                  }
+                  if (pageNumber === totalPages - 1 && currentPage < totalPages - 2) {
+                    return <span key={`ellipsis-end`} className="px-2 text-gray-400">...</span>;
+                  }
+                  return null;
+                }
+
+                return (
+                  <button
+                    key={pageNumber}
+                    onClick={() => handlePageChange(pageNumber)}
+                    className={`w-10 h-10 rounded-lg font-medium transition-all duration-300 ${
+                      isActive
+                        ? 'bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg'
+                        : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white'
+                    }`}
+                  >
+                    {pageNumber}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Next Button */}
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`p-3 rounded-lg font-medium transition-all duration-300 ${
+                currentPage === totalPages
+                  ? 'bg-gray-800/50 text-gray-500 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:scale-105 hover:shadow-lg'
+              }`}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </motion.div>
+        )}
       </div>
 
       {/* Resort Details Modal */}

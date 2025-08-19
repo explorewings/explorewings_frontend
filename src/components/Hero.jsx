@@ -96,7 +96,7 @@ const Hero = () => {
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-4 pt-24 lg:pt-28">
         {/* Main Heading with Gradient Text */}
-        <h1 className={`text-5xl sm:text-6xl md:text-8xl font-black mb-6 leading-tight transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <h1 className={`text-5xl sm:text-6xl md:text-8xl font-black mb-6 mt-10 leading-tight transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <span className="bg-gradient-to-r from-gray-300 via-gray-200 to-gray-400 bg-clip-text text-transparent">
             Explore
           </span>
