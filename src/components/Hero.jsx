@@ -59,24 +59,24 @@ const Hero = () => {
         {/* Light Rays Effect */}
         <LightRays 
           raysOrigin="top-center"
-          raysColor="#ff8050"
-          raysSpeed={1.0}
-          lightSpread={1.6}
-          rayLength={3.2}
+          raysColor="#ff1a1a"
+          raysSpeed={1.1}
+          lightSpread={1.9}
+          rayLength={3.8}
           pulsating={true}
-          fadeDistance={1.4}
-          saturation={1.6}
+          fadeDistance={1.3}
+          saturation={1.8}
           followMouse={true}
-          mouseInfluence={0.2}
-          noiseAmount={0.08}
-          distortion={0.08}
+          mouseInfluence={0.22}
+          noiseAmount={0.05}
+          distortion={0.1}
           className="z-[2]"
         />
 
         {/* Enhanced gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-[1] md:from-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50 z-[1] md:from-black/60 md:to-black/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/25 z-[1] md:from-black/30 md:to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-[1] md:from-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/80 z-[1] md:from-black/60 md:to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/60 z-[1] md:from-black/30 md:to-black/30"></div>
       </div>
 
       {/* Floating elements with reduced animation complexity */}
