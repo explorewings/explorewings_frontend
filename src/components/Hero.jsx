@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Plane, MapPin, Star, ArrowRight, Globe, Compass } from 'lucide-react'
 import { Link } from 'react-router-dom';
+import LightRays from './LightRays';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -38,7 +39,7 @@ const Hero = () => {
   ]
 
   return (
-    <section className="relative w-full bg-gray-900/80 pt-16 md:pt-0">
+    <section className="relative w-full bg-gray-900/80 min-h-screen">
       {/* Dynamic Background with Parallax - Simplified gradients */}
       <div className="absolute inset-0 w-full h-full">
         {/* Base gradient layer */}
@@ -55,12 +56,27 @@ const Hero = () => {
           <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-indigo-500/20 rounded-full mix-blend-overlay filter blur-2xl"></div>
         </div>
 
-        
+        {/* Light Rays Effect */}
+        <LightRays 
+          raysOrigin="top-center"
+          raysColor="#ff8050"
+          raysSpeed={1.0}
+          lightSpread={1.6}
+          rayLength={3.2}
+          pulsating={true}
+          fadeDistance={1.4}
+          saturation={1.6}
+          followMouse={true}
+          mouseInfluence={0.2}
+          noiseAmount={0.08}
+          distortion={0.08}
+          className="z-[2]"
+        />
 
         {/* Enhanced gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-red-900/50 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-[1] md:from-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50 z-[1] md:from-black/60 md:to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/25 z-[1] md:from-black/30 md:to-black/30"></div>
       </div>
 
       {/* Floating elements with reduced animation complexity */}
@@ -78,7 +94,7 @@ const Hero = () => {
       ))}
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4 mt-[62px] md:mt-[160px]">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-4 pt-24 lg:pt-28">
         {/* Main Heading with Gradient Text */}
         <h1 className={`text-5xl sm:text-6xl md:text-8xl font-black mb-6 leading-tight transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <span className="bg-gradient-to-r from-gray-300 via-gray-200 to-gray-400 bg-clip-text text-transparent">

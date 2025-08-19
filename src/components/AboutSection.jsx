@@ -33,7 +33,7 @@ const AboutSection = () => {
               <div className="relative rounded-3xl p-1">
                 {/* Red flare behind image */}
                 <img 
-                  src="/images/ew4.png" 
+                  src="/images/ew12.png" 
                   alt="Travel adventure" 
                   className="w-full h-auto object-cover aspect-[4/3] lg:aspect-[4/3] rounded-3xl relative z-10"
                 />
