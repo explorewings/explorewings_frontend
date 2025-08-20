@@ -131,26 +131,26 @@ const Hero = () => {
             <div className="relative h-[360px] sm:h-[420px] md:h-[460px]">
               {/* Card A */}
               <div className="absolute left-0 top-6 w-52 sm:w-60 md:w-64 h-64 sm:h-72 md:h-80 rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl backdrop-blur-md animate-float-slow">
-                <img src="/images/delhi.jpg" alt="Tropical escape" className="w-full h-full object-cover" />
+                <img src="https://i.pinimg.com/1200x/55/0b/37/550b37de4bb9f062376914ae258e2bcd.jpg" alt="Tropical escape" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-3 left-3 text-white text-sm font-medium flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-red-400" /> Delhi
+                  <MapPin className="w-4 h-4 text-red-400" /> 
                 </div>
               </div>
               {/* Card B */}
               <div className="absolute left-20 sm:left-28 md:left-32 top-24 rotate-6 w-48 sm:w-56 md:w-60 h-56 sm:h-64 md:h-72 rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl backdrop-blur-md animate-float">
-                <img src="/images/jaipur.jpg" alt="Mountain retreat" className="w-full h-full object-cover" />
+                <img src="https://i.pinimg.com/736x/91/56/ee/9156eed854cc25b8e31cc1a686d28c18.jpg" alt="Mountain retreat" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-3 left-3 text-white text-sm font-medium flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-red-400" /> Jaipur
+                  <MapPin className="w-4 h-4 text-red-400" /> 
                 </div>
               </div>
               {/* Card C */}
               <div className="absolute right-0 md:right-4 top-0 -rotate-6 w-44 sm:w-52 md:w-56 h-56 sm:h-64 md:h-72 rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl backdrop-blur-md animate-float-fast">
-                <img src="/images/banglore.jpg" alt="City lights" className="w-full h-full object-cover" />
+                <img src="https://i.pinimg.com/1200x/49/f2/81/49f28156faea01470dff33312ac2ce16.jpg" alt="City lights" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-3 left-3 text-white text-sm font-medium flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-red-400" /> Banglore
+                  <MapPin className="w-4 h-4 text-red-400" /> 
                 </div>
               </div>
             </div>

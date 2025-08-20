@@ -6,7 +6,7 @@ const destinations = [
   {
     id: 1,
     name: "Kochi,Kerala",
-    image: "https://i.pinimg.com/736x/9b/a8/3c/9ba83c79ce33fc173557135e968dfaae.jpg",
+    image: "https://i.pinimg.com/736x/d5/b8/41/d5b841550b34f37e0af86186cb6c3bca.jpg",
     rating: 4.9,
     reviews: 2341,
     description: "Tropical paradise with stunning beaches and rich culture",
@@ -24,7 +24,7 @@ const destinations = [
   {
     id: 3,
     name: "Anjuna, Goa",
-    image: "https://i.pinimg.com/736x/41/88/46/41884604312499b0fc1c3314ad49858a.jpg",
+    image: "https://i.pinimg.com/736x/d9/fe/a4/d9fea4696dad2d9827f06d2450cf69df.jpg",
     rating: 4.9,
     reviews: 2156,
     description: "Best party point in india",

@@ -84,26 +84,22 @@ const AboutSection = () => {
                   </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-6">
-                <button className="group relative overflow-hidden bg-gradient-to-r from-black text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-black/30 border border-gray-600">
-                  <Link to="/About">
-                  <span className="relative z-10 flex items-center text-lg">
-                    About Us
-                    <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
-                  </span>
-                  </Link>
-                </button>
+              <div className="mt-7 flex flex-row flex-wrap items-center gap-3 sm:gap-4">
+              <button className="group w-auto sm:w-auto flex-none transition-all duration-300 hover:scale-[1.02] rounded-full py-3 px-6 sm:py-4 sm:px-8"
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.25)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  border: '0.6px solid rgba(193, 141, 141, 0.38)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.37)',
+                }}
+              >
+                <Link to="/About">
+                  <span className="flex items-center justify-center whitespace-nowrap text-sm sm:text-base text-white font-semibold">About Us <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" /></span>
+                </Link>
+              </button>
                 
-                <button className="group relative bg-black/50 hover:bg-black/70 text-white font-bold py-4 px-8 rounded-full transition-all duration-500 transform hover:scale-105 border-2 border-white/20 hover:border-white/40 backdrop-blur-sm">
-                <Link to="/Resorts">
-                  <span className="flex items-center text-lg relative z-10">
-                    View Resorts
-                    <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
-
-                  </span>
-                  </Link>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </button>
+               
               </div>
             </div>
           </div>
