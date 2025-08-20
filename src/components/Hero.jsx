@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { Plane, MapPin, Star, ArrowRight, Globe, Compass } from 'lucide-react'
+import { Plane, MapPin, Star, ArrowRight, Globe, Hotel } from 'lucide-react'
 import { Link } from 'react-router-dom';
 // Removed LightRays background; using CSS aurora instead
 
@@ -107,17 +107,14 @@ const Hero = () => {
             {/* Trust badges */}
             <div className="mt-8 flex flex-wrap items-center gap-6 text-gray-300/90">
               <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-yellow-400" />
-                <span className="text-sm">4.9 average rating</span>
+                <Hotel className="w-5 h-5 text-red-400" />
+                <span className="text-sm">500+ Resorts</span>
               </div>
               <div className="flex items-center gap-2">
                 <Globe className="w-5 h-5 text-red-400" />
                 <span className="text-sm">150+ destinations</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Plane className="w-5 h-5 text-cyan-300" />
-                <span className="text-sm">50K+ travelers</span>
-              </div>
+              
             </div>
           </div>
 
