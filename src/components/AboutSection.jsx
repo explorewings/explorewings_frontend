@@ -33,9 +33,9 @@ const AboutSection = () => {
               <div className="relative rounded-3xl p-1">
                 {/* Red flare behind image */}
                 <img 
-                  src="/images/ew12.png" 
+                  src="/images/island.svg" 
                   alt="Travel adventure" 
-                  className="w-full h-full object-cover aspect-[4/3] lg:aspect-[4/3] rounded-3xl relative z-10"
+                  className="w-[90%] h-[90%] object-cover aspect-[4/3] lg:aspect-[4/3] rounded-3xl relative z-10"
                 />
                 
                 {/* Floating decorative elements */}

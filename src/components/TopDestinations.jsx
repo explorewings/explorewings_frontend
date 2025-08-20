@@ -43,7 +43,7 @@ const destinations = [
 
 const TopDestinations = () => {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden bg-black">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-black mb-[-30px]">
       <div className="absolute inset-0 bg-gradient-to-t from-black via-red-900/50 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
