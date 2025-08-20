@@ -16,19 +16,14 @@ const Navbar = () => {
   return (
     <>
       <nav 
+        className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-5xl"
         style={{
-          position: 'fixed',
-          top: '10px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 50,
-          backgroundColor: 'rgb(0, 0, 0)',
-          borderRadius: '40px',
-          width: '95%',
-          maxWidth: '1000px',
-          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-          backdropFilter: 'blur(5px)',
-          border: '1px solid rgba(255, 255, 255, 0.26)',
+          backgroundColor: 'rgba(0, 0, 0, 0.25)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderRadius: '50px',
+          border: '0.6px solid rgba(193, 141, 141, 0.38)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.37)',
         }}
       >
         <div className="px-4 sm:px-6 lg:px-8">
@@ -59,10 +54,11 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.to}
-                  className="relative px-3 py-2 text-sm font-medium text-white hover:text-red-300 transition-all duration-300 hover:scale-105 group"
+                  className="relative px-4 py-2 text-sm font-medium text-white/90 hover:text-white transition-all duration-300 hover:scale-105 group"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-300 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-400 to-red-300 transition-all duration-300 group-hover:w-full"></span>
+                  <div className="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10"></div>
                 </Link>
               ))}
             </div>
@@ -73,7 +69,7 @@ const Navbar = () => {
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full text-white hover:bg-white/10 hover:text-pink-400 transition-all duration-300 hover:scale-110"
+                className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300 hover:scale-110 backdrop-blur-sm"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -82,7 +78,7 @@ const Navbar = () => {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full text-white hover:bg-white/10 hover:text-blue-400 transition-all duration-300 hover:scale-110"
+                className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300 hover:scale-110 backdrop-blur-sm"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -91,7 +87,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-all duration-300"
+              className="lg:hidden p-2 rounded-lg text-white/80 hover:text-white hover:bg-transparent transition-all duration-300"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -104,17 +100,17 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 mt-10 ${
+      <div className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 mt-20 ${
         isMobileMenuOpen 
           ? 'opacity-100 pointer-events-auto' 
           : 'opacity-0 pointer-events-none'
       }`}>
         <div 
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/30 backdrop-blur-sm"
           onClick={() => setIsMobileMenuOpen(false)}
         />
         
-        <div className={`absolute top-16 left-4 right-4 bg-black/80 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/30 transition-all duration-300 ${
+        <div className={`absolute top-6 left-4 right-4 bg-black/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 transition-all duration-300 ${
           isMobileMenuOpen 
             ? 'translate-y-0 opacity-100' 
             : '-translate-y-4 opacity-0'
@@ -125,7 +121,7 @@ const Navbar = () => {
                 key={item.name}
                 to={item.to}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-4 py-3 text-white font-medium rounded-xl transition-all duration-200 hover:bg-red-500/20 hover:text-red-300 hover:scale-105 ${
+                className={`block px-4 py-3 text-white/90 font-medium rounded-xl transition-all duration-200 hover:bg-white/10 hover:text-white hover:scale-105 ${
                   'animate-fade-in-up'
                 }`}
                 style={{ animationDelay: `${index * 50}ms` }}
@@ -134,12 +130,12 @@ const Navbar = () => {
               </Link>
             ))}
             
-            <div className="pt-4 border-t border-gray-700 flex justify-center space-x-4">
+            <div className="pt-4 border-t border-white/20 flex justify-start space-x-4">
               <a 
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full text-white hover:bg-pink-500/20 hover:text-pink-400 transition-all duration-300"
+                className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300 "
               >
                 <Instagram className="w-6 h-6" />
               </a>
@@ -147,7 +143,7 @@ const Navbar = () => {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full text-white hover:bg-blue-500/20 hover:text-blue-400 transition-all duration-300"
+                className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300 "
               >
                 <Facebook className="w-6 h-6" />
               </a>
