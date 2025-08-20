@@ -39,12 +39,12 @@ const Hero = () => {
   ]
 
   return (
-    <section className="relative w-full bg-gray-900/80 min-h-screen">
+    <section className="relative w-full bg-gray-900/80">
       {/* Dynamic Background with Parallax - Simplified gradients */}
       <div className="absolute inset-0 w-full h-full">
         {/* Base gradient layer */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-gray-900 via-red-900/30 to-gray-800 transition-transform duration-300 ease-out"
+          className="absolute inset-0 bg-gradient-to-br from-gray-900 via-red-900/80 to-gray-800 transition-transform duration-300 ease-out"
           style={{
             transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.005}px)`
           }}
@@ -65,9 +65,9 @@ const Hero = () => {
         </div>
 
         {/* Enhanced gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-[1] md:from-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/80 z-[1] md:from-black/60 md:to-black/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/60 z-[1] md:from-black/30 md:to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-[1] md:from-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 z-[1] md:from-black/60 md:to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/45 z-[1] md:from-black/30 md:to-black/30"></div>
         {/* Bottom fade to avoid visible cutoff */}
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-black/95 z-[3]"></div>
       </div>
@@ -87,7 +87,7 @@ const Hero = () => {
       ))}
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-4 pt-24 lg:pt-28">
+      <div className="relative z-10 flex flex-col items-center justify-center text-white text-center px-4 pt-24 lg:pt-28">
         {/* Main Heading with Gradient Text */}
         <h1 className={`text-5xl sm:text-6xl md:text-8xl font-black mb-6 mt-10 leading-tight transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <span className="bg-gradient-to-r from-gray-300 via-gray-200 to-gray-400 bg-clip-text text-transparent">
