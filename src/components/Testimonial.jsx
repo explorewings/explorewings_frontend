@@ -67,7 +67,7 @@ const Testimonials = () => {
         <div className="text-center mb-20 mt-[-80px]">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8">
             <span className="bg-gradient-to-r from-red-200 via-red-400 to-red-600 bg-clip-text text-transparent ">
-              What Our Guests Say
+              Testimonials
             </span>
           </h2>
         </div>

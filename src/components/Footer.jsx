@@ -62,7 +62,7 @@ const Footer = () => {
             <ul className="space-y-4 text-gray-300">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                <span>123 Adventure Avenue, Wanderlust City, 98765</span>
+                <span>Asiatic Business Centre (6th Floor), Kazhakuttam, Thiruvananthapuram, Kerala </span>
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-3" />
@@ -70,7 +70,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-3" />
-                <a href="tel:+1234567890" className="hover:text-red-400 transition-colors duration-300">+1 (234) 567-890</a>
+                <a href="tel:+1234567890" className="hover:text-red-400 transition-colors duration-300">+91 80782 78032</a>
               </li>
             </ul>
           </div>
@@ -78,13 +78,8 @@ const Footer = () => {
           {/* Newsletter & Social */}
           <div>
             <h3 className="text-lg font-semibold mb-6 tracking-wider uppercase">Stay Connected</h3>
-            <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest travel deals.</p>
-            <form className="flex mb-6">
-              <input type="email" placeholder="Your Email" className="w-full bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-              <button type="submit" className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-r-lg transition-colors duration-300">
-                <Send className="w-5 h-5" />
-              </button>
-            </form>
+            
+           
             <div className="flex space-x-4">
               {socialLinks.map(social => (
                 <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-800 rounded-full hover:bg-red-600 hover:scale-110 transition-all duration-300">
