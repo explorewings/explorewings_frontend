@@ -74,9 +74,13 @@ const Hero = () => {
 
       {/* Main Content: Fresh split layout */}
       <div className="relative z-10 px-4 pt-24 sm:pt-24 lg:pt-28 ">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-10 items-center mt-8 md:mt-[100px]">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-10 items-center mt-8 md:mt-[80px]">
           {/* Left: Headline + CTAs + Trust badges */}
           <div className={`md:col-span-7 text-white ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'} transition-all duration-500`}>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-1.5 text-xs sm:text-sm text-gray-200 uppercase tracking-wider mb-5">
+              <span className="w-2 h-2 rounded-full bg-red-500"></span>
+              Best vacation planners
+            </div>
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tight">
               <span className="bg-gradient-to-r from-gray-200 via-gray-100 to-white bg-clip-text text-transparent">Explore</span>
               <br />
