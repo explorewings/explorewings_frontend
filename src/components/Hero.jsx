@@ -39,12 +39,12 @@ const Hero = () => {
   ]
 
   return (
-    <section className="relative w-full bg-gray-900/80">
+    <section className="relative w-full bg-gray-900/80 ">
       {/* Dynamic Background with Parallax - Simplified gradients */}
       <div className="absolute inset-0 w-full h-full">
         {/* Base gradient layer */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-gray-900 via-red-900/80 to-gray-800 transition-transform duration-300 ease-out"
+          className="absolute inset-0 bg-gradient-to-br from-gray-900 via-red-900/80 to-gray-800 transition-transform duration-300 ease-out "
           style={{
             transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.005}px)`
           }}
@@ -72,80 +72,81 @@ const Hero = () => {
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-black/95 z-[3]"></div>
       </div>
 
-      {/* Floating elements with reduced animation complexity */}
-      {floatingElements.map((element, index) => (
-        <div
-          key={index}
-          className={`absolute ${element.position} text-white/10 animate-float hidden lg:block`}
-          style={{ 
-            animationDelay: element.delay,
-            animationDuration: '10s'
-          }}
-        >
-          <element.icon size={32} />
-        </div>
-      ))}
+      {/* Main Content: Fresh split layout */}
+      <div className="relative z-10 px-4 pt-24 sm:pt-24 lg:pt-28 ">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-10 items-center mt-8 md:mt-[100px]">
+          {/* Left: Headline + CTAs + Trust badges */}
+          <div className={`md:col-span-7 text-white ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'} transition-all duration-500`}>
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tight">
+              <span className="bg-gradient-to-r from-gray-200 via-gray-100 to-white bg-clip-text text-transparent">Explore</span>
+              <br />
+              The <span className="text-gray-100">Unseen</span>
+            </h1>
+            <p className="mt-5 text-base sm:text-lg lg:text-xl text-gray-300 max-w-xl leading-relaxed">
+              Curated journeys, premium stays, and seamless experiences. Plan your next escape with confidence.
+            </p>
 
-      {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-white text-center px-4 pt-24 lg:pt-28">
-        {/* Main Heading with Gradient Text */}
-        <h1 className={`text-5xl sm:text-6xl md:text-8xl font-black mb-6 mt-10 leading-tight transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <span className="bg-gradient-to-r from-gray-300 via-gray-200 to-gray-400 bg-clip-text text-transparent">
-            Explore
-          </span>
-          <br />
-          <span className="text-gray-100">The Unseen</span>
-        </h1>
+            <div className="mt-7 flex flex-row flex-wrap items-center gap-3 sm:gap-4">
 
-        {/* Subtitle */}
-        <p className={`text-lg md:text-xl lg:text-2xl mb-12 text-gray-400 max-w-2xl leading-relaxed transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          Embark on extraordinary adventures and discover breathtaking destinations that will leave you with memories to last a lifetime
-        </p>
+              <button className="group w-auto sm:w-auto flex-none bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-red-600/25 hover:scale-[1.02]">
+                <Link to="/Resorts">
+                  <span className="flex items-center justify-center whitespace-nowrap text-sm sm:text-base">Our Resorts <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" /></span>
+                </Link>
+              </button>
+              {/* <button className="group w-1/2 sm:w-auto flex-1 sm:flex-none bg-black/30 backdrop-blur-md border border-white/10 hover:border-white/20 text-gray-200 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 hover:bg-black/40">
+                <Link to="/Resorts">
+                  <span className="flex items-center justify-center whitespace-nowrap text-sm sm:text-base">View Resorts <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" /></span>
+                </Link>
+              </button> */}
+            </div>
 
-        {/* CTA Buttons */}
-        <div className={`flex flex-col sm:flex-row gap-4 transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          
-          <button className="group bg-black/20 backdrop-blur-md border border-gray-700/50 hover:bg-black/30 text-gray-300 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-transform duration-300 hover:scale-105">
-          <Link to="/Packages">
-            <span className="flex items-center">
-              Start Your Journey
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </span>
-            </Link>
-          </button>
-          
-          <button className="group bg-black/20 backdrop-blur-md border border-gray-700/50 hover:bg-black/30 text-gray-300 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-transform duration-300 hover:scale-105">
-          <Link to="/Resorts">
-            <span className="flex items-center">
-              View Our Resorts
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            {/* Trust badges */}
+            <div className="mt-8 flex flex-wrap items-center gap-6 text-gray-300/90">
+              <div className="flex items-center gap-2">
+                <Star className="w-5 h-5 text-yellow-400" />
+                <span className="text-sm">4.9 average rating</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="w-5 h-5 text-red-400" />
+                <span className="text-sm">150+ destinations</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Plane className="w-5 h-5 text-cyan-300" />
+                <span className="text-sm">50K+ travelers</span>
+              </div>
+            </div>
+          </div>
 
-            </span>
-            </Link>
-          </button>
-        </div>
-
-        {/* Stats Section - Simplified animations */}
-        <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mt-8 sm:mt-12 w-full max-w-6xl px-4 transform transition-all duration-500 ${isLoaded ? 'translate-y-0 opacity-80' : 'translate-y-10 opacity-0'}`}>
-          {[
-            { number: '150+', label: 'Destinations', icon: Globe },
-            { number: '50K+', label: 'Travelers', icon: Plane },
-            { number: '4.9', label: 'Rating', icon: Star }
-          ].map((stat, index) => (
-            <div key={index} className="text-center group cursor-pointer relative">
-              <div className="bg-gradient-to-br from-gray-900/90 to-gray-900/50 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-6 border border-gray-700/40 transition-transform duration-300 hover:scale-102">
-                <div className="mb-3 text-gray-400">
-                  <stat.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto" />
+          {/* Right: Collage cards */}
+          <div className={`md:col-span-5 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'} transition-all duration-500`}>
+            <div className="relative h-[360px] sm:h-[420px] md:h-[460px]">
+              {/* Card A */}
+              <div className="absolute left-0 top-6 w-52 sm:w-60 md:w-64 h-64 sm:h-72 md:h-80 rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl backdrop-blur-md animate-float-slow">
+                <img src="/images/delhi.jpg" alt="Tropical escape" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-3 left-3 text-white text-sm font-medium flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-red-400" /> Delhi
                 </div>
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-200 mb-2">
-                  {stat.number}
+              </div>
+              {/* Card B */}
+              <div className="absolute left-20 sm:left-28 md:left-32 top-24 rotate-6 w-48 sm:w-56 md:w-60 h-56 sm:h-64 md:h-72 rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl backdrop-blur-md animate-float">
+                <img src="/images/jaipur.jpg" alt="Mountain retreat" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-3 left-3 text-white text-sm font-medium flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-red-400" /> Jaipur
                 </div>
-                <div className="text-xs sm:text-sm text-gray-500 font-medium">
-                  {stat.label}
+              </div>
+              {/* Card C */}
+              <div className="absolute right-0 md:right-4 top-0 -rotate-6 w-44 sm:w-52 md:w-56 h-56 sm:h-64 md:h-72 rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl backdrop-blur-md animate-float-fast">
+                <img src="/images/banglore.jpg" alt="City lights" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-3 left-3 text-white text-sm font-medium flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-red-400" /> Banglore
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
         </div>
       </div>
 
