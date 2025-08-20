@@ -92,9 +92,17 @@ const Hero = () => {
 
             <div className="mt-7 flex flex-row flex-wrap items-center gap-3 sm:gap-4">
 
-              <button className="group w-auto sm:w-auto flex-none bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-red-600/25 hover:scale-[1.02]">
+              <button className="group w-auto sm:w-auto flex-none transition-all duration-300 hover:scale-[1.02] rounded-full py-3 px-6 sm:py-4 sm:px-8"
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.25)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  border: '0.6px solid rgba(193, 141, 141, 0.38)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.37)',
+                }}
+              >
                 <Link to="/Resorts">
-                  <span className="flex items-center justify-center whitespace-nowrap text-sm sm:text-base">Our Resorts <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" /></span>
+                  <span className="flex items-center justify-center whitespace-nowrap text-sm sm:text-base text-white font-semibold">Our Resorts <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" /></span>
                 </Link>
               </button>
               {/* <button className="group w-1/2 sm:w-auto flex-1 sm:flex-none bg-black/30 backdrop-blur-md border border-white/10 hover:border-white/20 text-gray-200 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 hover:bg-black/40">
