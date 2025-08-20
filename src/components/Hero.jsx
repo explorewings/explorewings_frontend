@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Plane, MapPin, Star, ArrowRight, Globe, Compass } from 'lucide-react'
 import { Link } from 'react-router-dom';
-import LightRays from './LightRays';
+// Removed LightRays background; using CSS aurora instead
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -56,27 +56,20 @@ const Hero = () => {
           <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-indigo-500/20 rounded-full mix-blend-overlay filter blur-2xl"></div>
         </div>
 
-        {/* Light Rays Effect */}
-        <LightRays 
-          raysOrigin="top-center"
-          raysColor="#ff1a1a"
-          raysSpeed={1.1}
-          lightSpread={1.9}
-          rayLength={3.8}
-          pulsating={true}
-          fadeDistance={1.3}
-          saturation={1.8}
-          followMouse={true}
-          mouseInfluence={0.22}
-          noiseAmount={0.05}
-          distortion={0.1}
-          className="z-[2]"
-        />
+        {/* Aurora/Nebula Effect (pure CSS, performant) */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-[2] aurora-mask">
+          <div className="aurora-blob aurora-1" />
+          <div className="aurora-blob aurora-2" />
+          <div className="aurora-blob aurora-3" />
+          <div className="stars" />
+        </div>
 
         {/* Enhanced gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-[1] md:from-black/80"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/80 z-[1] md:from-black/60 md:to-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/60 z-[1] md:from-black/30 md:to-black/30"></div>
+        {/* Bottom fade to avoid visible cutoff */}
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-black/95 z-[3]"></div>
       </div>
 
       {/* Floating elements with reduced animation complexity */}
@@ -163,6 +156,65 @@ const Hero = () => {
         }
         .animate-float {
           animation: float 10s ease-in-out infinite;
+        }
+
+        /* Aurora blobs */
+        .aurora-blob {
+          position: absolute;
+          width: 110vw;
+          height: 110vw;
+          filter: blur(80px);
+          opacity: 0.8;
+          animation: auroraShift 18s ease-in-out infinite alternate;
+          will-change: transform;
+        }
+        .aurora-1 {
+          top: -20%;
+          left: -10%;
+          background: radial-gradient(closest-side, rgba(255, 64, 64, 0.35), rgba(255, 64, 64, 0) 65%);
+          animation-duration: 20s;
+        }
+        .aurora-2 {
+          right: -5%;
+          bottom: -25%;
+          background: radial-gradient(closest-side, rgba(255, 128, 80, 0.28), rgba(255, 128, 80, 0) 65%);
+          animation-duration: 22s;
+        }
+        .aurora-3 {
+          top: 10%;
+          right: 20%;
+          background: radial-gradient(closest-side, rgba(255, 0, 128, 0.22), rgba(255, 0, 128, 0) 65%);
+          animation-duration: 24s;
+        }
+        @keyframes auroraShift {
+          0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+          50%  { transform: translate3d(5%, -3%, 0) rotate(12deg) scale(1.06); }
+          100% { transform: translate3d(-5%, 3%, 0) rotate(-10deg) scale(1.1); }
+        }
+
+        /* Subtle twinkling stars */
+        .stars {
+          position: absolute;
+          inset: 0;
+          background-image:
+            radial-gradient(2px 2px at 18% 32%, rgba(255,255,255,0.14) 40%, transparent 41%),
+            radial-gradient(1.6px 1.6px at 72% 42%, rgba(255,255,255,0.12) 40%, transparent 41%),
+            radial-gradient(1.8px 1.8px at 42% 78%, rgba(255,255,255,0.10) 40%, transparent 41%),
+            radial-gradient(1.2px 1.2px at 12% 68%, rgba(255,255,255,0.12) 40%, transparent 41%),
+            radial-gradient(1.4px 1.4px at 82% 16%, rgba(255,255,255,0.10) 40%, transparent 41%);
+          animation: twinkle 6s ease-in-out infinite;
+          opacity: 0.5;
+          pointer-events: none;
+        }
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.35; }
+          50% { opacity: 0.7; }
+        }
+
+        /* Fade the aurora toward the bottom to blend seamlessly */
+        .aurora-mask {
+          -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.98) 65%, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0) 100%);
+                  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.98) 65%, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0) 100%);
         }
       `}</style>
     </section>
