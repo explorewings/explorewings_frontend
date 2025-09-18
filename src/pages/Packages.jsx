@@ -11,7 +11,7 @@ import { supabase } from '../lib/supabaseClient';
 import Footer from '../components/Footer';
 
 const Packages = () => {
-  const [activeTab, setActiveTab] = useState('Kerala');
+  const [activeTab, setActiveTab] = useState('International');
   const [searchQuery, setSearchQuery] = useState('');
   const [packages, setPackages] = useState([]);
   const [loading, setLoading] = useState(true);
